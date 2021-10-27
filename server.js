@@ -100,7 +100,7 @@ app.get("*", (req,res)=>{
     res.render("404.html")
 })
 
-const port = 8080;
+const port=process.env.PORT;
 app.listen(port, ()=>{
-    console.log('listening on port at '+port);
+    console.log('listening on port at '+ port);
 });
