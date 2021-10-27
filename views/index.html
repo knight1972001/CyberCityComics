@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberCityComics: <%=data.title%></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+        </style>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css"></link>
+</head>
+
+<body onload="onCreate(<%= data.num %>)">
+    <div class="header">
+        <div class="contact">
+            <a href="/"><p>Cyber City Comics</p></a>
+        </div>
+        <div class="slogan">
+            <p>Cyber City Comics is one of the fastest growing comic book stores in downtown Toronto since 1990s.</p>
+        </div>
+    </div>
+    
+    <div class="content-container">
+        <h2 id="title"><%= data.title %></h2>
+        <div class="navigator">
+            <a href='/1'><button>|<</button></a>
+            <a href='/<%= prev %>'><button>< Prev</button></a>
+            <a href='/<%= random %>'><button>Random</button></a>
+            <a href='/<%= next %>'><button>Next ></button></a>
+            <a href='/<%= maxPage %>'><button>>|</button></a>
+        </div>
+        <div id="display-content">
+        </div>
+        <div class="navigator">
+            <a href='/1'><button>|<</button></a>
+            <a href='/<%= prev %>'><button>< Prev</button></a>
+            <a href='/<%= random %>'><button>Random</button></a>
+            <a href='/<%= next %>'><button>Next ></button></a>
+            <a href='/<%= maxPage %>'><button>>|</button></a>
+        </div>
+        <div class="content-info">
+            <p>Permanent Link to this comic: <a href=https://xkcd.com/<%=data.num%>>https://xkcd.com/<%=data.num%></a> </p>
+            <p>Image URL (for hotlinking/embedding): <a href=<%=data.img%>><%=data.img%></a> </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="grid-content">
+            <a class="item1" href="/150"><div></div></a>
+            <a class="item2" href="/730"><div></div></a>
+            <a class="item3" href="/162"><div></div></a>
+            <a class="item4" href="/688"><div></div></a>
+            <a class="item5" href="/556"><div></div></a>
+            <a class="item6" href="/1732"><div></div></a>
+        </div>
+        <div class="copyright">&copy; CyberCityComics</div>
+    </div>
+</body>
+</html>

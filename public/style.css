@@ -1,0 +1,150 @@
+body{
+    background-color: #96A8C8;
+    text-align: center;
+    left: 50%;
+    width: 800px;
+    position: absolute;
+    text-decoration: none;
+    margin-left: -400px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.header{
+    position: relative;
+    width: 800px;
+    overflow: hidden;
+}
+
+.contact{ 
+    width: 29%;
+    height: 200px;
+    background: rgb(255,255,255);
+    float: left;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contact > a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contact > a > p{
+    padding-top:25%;
+}
+
+.slogan{
+    width: 69%;
+    height: 200px;
+    background:rgb(255,255,255);
+    float: right;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.slogan > p {
+    padding-top: 10%;
+    font-weight: bold;
+}
+
+.content-container{
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.navigator{ 
+    margin: 15px;
+}
+
+
+button{
+    width: 10%;
+    background-color: #6E7B91;
+    color:rgba(255, 255, 255);
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+.footer{
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.item1 { 
+    grid-area: item1; 
+    background-image: URL("https://imgs.xkcd.com/comics/grownups.png");
+    background-repeat: no-repeat;
+    background-position: -542px -31px;
+    background-size: 500%;
+}
+
+.item2 { 
+    grid-area: item2;
+    background-image: URL("https://imgs.xkcd.com/comics/circuit_diagram.png");
+    background-repeat: no-repeat;
+    background-position: -373px -643px;
+    background-size: 500%;
+}
+
+.item3 { 
+    grid-area: item3;
+    background-image: URL("https://imgs.xkcd.com/comics/angular_momentum.jpg");
+    background-repeat: no-repeat;
+    background-position: -35px -16px;
+    background-size: 250%;
+ }
+
+.item4 { 
+    grid-area: item4;
+    background-image: URL("https://imgs.xkcd.com/comics/self_description.png");
+    background-repeat: no-repeat;
+    background-position: -7px 29px;
+    background-size: 500%;
+}
+
+.item5 { 
+    grid-area: item5;
+    background-image: URL("https://imgs.xkcd.com/comics/alternative_energy_revolution.jpg");
+    background-repeat: no-repeat;
+    background-position: -19px -9px;
+    background-size: 300%;
+}
+
+.item6 { 
+    grid-area: item6;
+    background-image: URL("https://imgs.xkcd.com/comics/earth_temperature_timeline.png");
+    background-repeat: no-repeat;
+    background-position: -83px -462px;
+    background-size: 120%;
+}
+
+.grid-content {
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        'item1 item2 item3 item4 item5'
+        'item6 item6 item6 item6 item6';
+    grid-gap: 10px;
+    padding: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    inline-size: 750px;
+    position: static;
+}
+
+.grid-content > a {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgb(0, 0, 0);
+    position: relative;
+    height: 200px;
+}
