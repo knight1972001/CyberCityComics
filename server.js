@@ -2,8 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import fetch from 'node-fetch'
 import ejs from 'ejs';
+import dotenv from 'dotenv';
 
 const app = express();
+dotenv.config();
 
 app.use(cors());
 app.use(express.static('public'));
