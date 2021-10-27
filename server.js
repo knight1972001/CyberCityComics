@@ -15,6 +15,9 @@ app.set('view engine', 'ejs');
 
 var numPage=0;
 var maxPage=2533;
+var myMap=new Map();
+
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.get("/", async (req, res) => {
     // res.sendFile(__dirname + '/public/index.html')
@@ -27,6 +30,14 @@ app.get("/", async (req, res) => {
     let prev=numPage-1;
     let next=numPage+1;
 
+    if(myMap.get(numPage)){
+        let value=parseInt(myMap.get(numPage)) + 1;
+        myMap.set(numPage, value);
+    }else{
+        myMap.set(numPage, 1);
+    }
+    let count=myMap.get(numPage);
+
     if(prev <= 0){
         prev=1;
     }
@@ -38,7 +49,8 @@ app.get("/", async (req, res) => {
         prev: prev,
         next: next,
         random: random,
-        maxPage: maxPage
+        maxPage: maxPage,
+        count: count
     });
 });
 
@@ -54,11 +66,19 @@ app.get("/:id", async (req, res) => {
         link="http://xkcd.com/info.0.json";
     }
     const response = await fetch(link);
-    if(response.status==404){
+    if(response.status == 404){
         res.status(404).redirect("/error/404");
     }else{
-        const data  = await response.json();
+        const data = await response.json();
         numPage=data.num;
+        if(myMap.get(numPage)){
+            let value=parseInt(myMap.get(numPage)) + 1;
+            myMap.set(numPage, value);
+        }else{
+            myMap.set(numPage, 1);
+        }
+        let count=myMap.get(numPage);
+
         let random=Math.abs(Math.floor(Math.random()* (maxPage - 1)+1));
         let prev=parseInt(numPage) - 1;
         let next=parseInt(numPage) + 1;
@@ -74,7 +94,8 @@ app.get("/:id", async (req, res) => {
             prev: prev,
             next: next,
             random: random,
-            maxPage: maxPage
+            maxPage: maxPage,
+            count: count
         });
     }
 });
